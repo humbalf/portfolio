@@ -1,0 +1,10 @@
+//Boje
+$pozadina: hsl(0, 0%, 85%);
+$pozadina-svetla: hsl(0, 0%, 95%);
+$pozadina-tamna: hsl(0, 0%, 55%);
+
+@import "general";
+@import "sidebar";
+@import "glavni-deo";
+@import "media-1";
+@import "media-2";

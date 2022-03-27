@@ -1,0 +1,189 @@
+.sidebar {
+    //neaktivirano stanje
+    background-color: $pozadina;
+    width: 7rem;
+    height: 100%;
+    position: fixed;
+    padding: 2rem 1rem;
+    z-index: 100;
+
+    #btn {
+        font-size: 3rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        margin-bottom: 2rem;
+
+        &:hover {
+            background-color: $pozadina-svetla;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .profilna {
+        img {
+            width: 100%;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .ime {
+            font-size: 1.8rem;
+            font-weight: 700;
+            writing-mode: sideways-lr;
+            text-align: end;
+            margin: 2rem 0;
+
+            span {
+                text-transform: uppercase;
+                display: block;
+            }
+        }
+
+        .struka {
+            display: none;
+        }
+    }
+
+    .licni-podaci {
+
+        margin-top: 2rem;
+
+        .stavka {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem;
+            position: relative;
+
+            &:hover {
+                background-color: $pozadina-svetla;
+                border-radius: 0.5rem;
+                border-right: 2px solid $pozadina-tamna;
+                cursor: pointer;
+
+                .stavka-ime {
+                    display: inline-block;
+                    position: absolute;
+                    left: 105%;
+                    width: fit-content;
+                    background-color: $pozadina-svetla;
+                    white-space: nowrap;
+                    padding: 0.8rem;
+                    border-top-right-radius: 0.5rem;
+                    border-bottom-right-radius: 0.5rem;
+                    border-right: 2px solid $pozadina-tamna;
+                }
+            }
+
+            &:last-child {
+                &:hover {
+                    .stavka-ime {
+                        white-space: unset;
+                        top: 0;
+                    }
+                }
+            }
+
+            i {
+                font-size: 3rem;
+            }
+
+            .stavka-ime {
+                font-size: 1.5rem;
+                display: none;
+            }
+        }
+    }
+
+    .drustvene-mreze {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4rem;
+        font-size: 3rem;
+
+        i {
+            padding: 0.8rem;
+            &:hover {
+                background-color: $pozadina-svetla;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    &.active {
+        //aktivirano stanje
+        width: 26rem;
+        padding: 4rem 2rem;
+
+        #btn {
+            width: fit-content;
+        }
+
+        .profilna {
+            img {
+                border-width: 4px;
+            }
+
+            .ime {
+                text-align: center;
+                writing-mode: unset;
+                font-size: 3rem;
+            }
+
+            .struka {
+                display: block;
+                background-color: $pozadina-tamna;
+                text-align: center;
+                padding: 0.2rem;
+                border-radius: 0.4rem;
+                font-size: 1.4rem;
+                color: white;
+                letter-spacing: 0.2rem;
+            }
+        }
+
+        .licni-podaci {
+            .stavka {
+
+                justify-content: flex-start;
+
+                i {
+                    font-size: 2rem;
+                    margin-right: 1rem;
+                }
+
+                .stavka-ime {
+                    display: block;
+                    font-size: 1.6rem;
+                }
+
+                &:hover {
+                    background-color: $pozadina;
+                    cursor: default;
+                    border: unset;
+
+                    .stavka-ime {
+                        position: unset;
+                        background-color: $pozadina;
+                        padding: 0;
+                        border: unset;
+                        white-space: unset;
+                    }
+                }
+
+                &:last-child {
+                    align-items: flex-start;
+                }
+            }
+        }
+
+        .drustvene-mreze {
+            flex-direction: row;
+            gap: 1.5rem;
+        }
+    }
+}
